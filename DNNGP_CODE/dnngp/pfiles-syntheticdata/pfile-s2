@@ -1,0 +1,41 @@
+##No spaces between comma separated items (or the world will implode)!
+
+n.threads 2
+seed 2
+n.samples 5000
+n.report 100
+out.file synth-chain2
+
+nn 15
+
+nn.fast 0
+nn.index.only 0
+
+#.file is file name, number of rows, and number of columns
+coords.file .../data/SYNTH_DATA/coords.mod,900,4
+X.file .../data/SYNTH_DATA/x.mod,900,1
+y.file .../data/SYNTH_DATA/y.mod,900,1
+
+##0 exponential, 1 spherical, 2 matern, 3 gaussian
+cov.model 0
+
+beta.starting 1.1
+
+tauSq.b 0.1
+tauSq.starting 0.11
+tauSq.tuning 0.0015
+
+
+sigmaSq.b 1
+sigmaSq.starting 0.95
+sigmaSq.tuning 0.0015
+
+phi.a 3
+phi.b 300
+phi.starting 5.5
+phi.tuning 0.0015
+
+nu.a 0.01
+nu.b 2
+nu.starting 1
+nu.tuning 0.01

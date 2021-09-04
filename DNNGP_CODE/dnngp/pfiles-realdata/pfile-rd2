@@ -1,0 +1,41 @@
+##No spaces between comma separated items (or the world will implode)!
+
+n.threads 2
+seed 1
+n.samples 5000
+n.report 100
+out.file rda2-chain1
+
+nn 15
+
+nn.fast 0
+nn.index.only 0
+
+#.file is file name, number of rows, and number of columns
+coords.file .../data/TEMP_DATA/coords.mod,2160,3
+X.file .../data/TEMP_DATA/x.mod,2160,2
+y.file .../data/TEMP_DATA/y.mod,2160,1
+
+##0 exponential, 1 spherical, 2 matern, 3 gaussian
+cov.model 0
+
+beta.starting 8,1
+
+tauSq.b 0.1
+tauSq.starting 0.5
+tauSq.tuning 0.000015
+
+
+sigmaSq.b 1
+sigmaSq.starting 1.3
+sigmaSq.tuning 0.000015
+
+phi.a 0.0015
+phi.b 0.027
+phi.starting 0.0017
+phi.tuning 0.000015
+
+nu.a 0.01
+nu.b 2
+nu.starting 1
+nu.tuning 0.01

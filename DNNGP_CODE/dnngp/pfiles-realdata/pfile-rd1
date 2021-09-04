@@ -1,0 +1,40 @@
+##No spaces between comma separated items (or the world will implode)!
+
+n.threads 2
+seed 1
+n.samples 5000
+n.report 100
+out.file temp-expchain
+
+nn 15
+
+nn.fast 0
+nn.index.only 0
+
+#.file is file name, number of rows, and number of columns
+coords.file .../data/TEMP_DATA/coords.mod,2160,3
+X.file .../data/TEMP_DATA/x.mod,2160,2
+y.file .../data/TEMP_DATA/y.mod,2160,1
+
+##0 exponential, 1 spherical, 2 matern, 3 gaussian
+cov.model 0
+
+beta.starting 10,0
+
+tauSq.b 1
+tauSq.starting 1
+tauSq.tuning 0.00003
+
+sigmaSq.b 1
+sigmaSq.starting 2
+sigmaSq.tuning 0.00003
+
+phi.a 0.001
+phi.b 0.02
+phi.starting 0.003
+phi.tuning 0.00003
+
+nu.a 0.01
+nu.b 2
+nu.starting 1
+nu.tuning 0.01
